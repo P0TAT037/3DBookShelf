@@ -95,9 +95,11 @@ header .sticky ul li a{
     30px 30px 15px rgba(0, 0, 0, 0.1),
     inset 1px 1px 2px #fff; */
 }
+.Search input,
 .Search input::placeholder{
     color: transparent;
 }
+.Search:hover input,
 .Search:hover input::placeholder{
     color: #334257;
 }
