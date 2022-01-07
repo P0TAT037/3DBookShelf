@@ -1,0 +1,13 @@
+.book {
+    display: none;
+    overflow: hidden;
+}
+
+.page{
+    overflow: hidden;
+}
+
+.title {
+    width: 130px;
+    height: 300px;
+}

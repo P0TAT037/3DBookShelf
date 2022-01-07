@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>main</title>
-        
-        
-    </head>
+  <head>
+    <title>main</title>
+    <link rel="stylesheet" src="css/bookStyle.css" />
+  </head>
 
-    <body style="background-color: rgb(16, 96, 128);">  
-         
-         <div class = "book"></div>    
-        <!-- <div class = "b">
-            <div style="background-color: rgb(160, 95, 95);">yes</div>
-            <div style="background-color: rgb(73, 15, 15);">no</div>
-            <div style="background-color: rgb(235, 15, 15);">yes</div>
-            <div style="background-color: rgb(53, 23, 23);">no</div>
-        </div> -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
-        <script src="turnjs4/lib/turn.min.js"></script>
-        <script src="js/renderBook.js"></script>
-        <!-- <script>
-            $('.b').turn({
-        autoCenter: true,
-        acceleration: true,
-    })
-        </script> -->
-    </body>
+  <body style="background-color: rgb(16, 96, 128)">
+    
+    <input type="button" id="titleb1" onclick = "turn('b1')">
+    <div id="b1" hidden class="book"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
+    <script src="turnjs4/lib/turn.min.js"></script>
+    <script src="js/renderBook.js"></script>
+    
+    <script>
+      function turn(bookId) {
+        console.log("started");
+        document.querySelectorAll(".book").forEach(function (book) {
+          if (book.hidden == true) book.hidden = false;
+        });
+
+        $('#'+bookId).turn({
+          width: 540 * 2,
+          height: 566 * 2,
+          autoCenter: true,
+          acceleration: true,
+        });
+      }
+    </script>
+  </body>
 </html>

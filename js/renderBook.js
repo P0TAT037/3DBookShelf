@@ -1,31 +1,31 @@
-var html = "";
-var pdf = pdfjsLib.getDocument('./res/sample.pdf');
+var pdf = pdfjsLib.getDocument('../res/SWE.pdf');
+var w, h;
+var bookDivHtml = "";
 
 document.querySelectorAll('.book').forEach(function(book) {
-    renderBook(book);
+    renderBook(book);   
 }); 
+
 
 function renderBook(book){
     pdf.promise.then(function (doc) {
         pc = doc.numPages;
-        for(let i = 1; i <= pc; i++){
-            html+="<div><canvas id='" + i + "'></canvas></div>\n";
-        }
-        book.innerHTML=html;
-        console.log('done');
-        for(let j = 1; j <= pc; j++){
-            renderPage(pdf, j);   
-        };
         
+        for(let i = 1; i <= pc; i++){
+            bookDivHtml+="<div class = 'page'><canvas id='" + i + "p'></canvas></div>\n";
+        }
+
+        book.innerHTML=bookDivHtml;
+        console.log('done');
+        console.log(bookDivHtml);
+        
+        for(let j = 1; j <= pc; j++){
+            renderPage(pdf, j);
+        };
     });
+    
 }
 
-// $.when(renderBook).done(function(){
-//     $('.book').turn({
-//         autoCenter: true,
-//         acceleration: true,
-//     })
-// })
 function renderPage(pdf, pageNum)
 {
     pdf.promise.then(function(pdf){
@@ -35,14 +35,14 @@ function renderPage(pdf, pageNum)
             // Support HiDPI-screens.
             var outputScale = window.devicePixelRatio || 1;
 
-            var canvas = document.getElementById(''+pageNum);
+            var canvas = document.getElementById(pageNum+'p');
             var context = canvas.getContext('2d');
 
             canvas.width = Math.floor(viewport.width * outputScale);
             canvas.height = Math.floor(viewport.height * outputScale);
             canvas.style.width = Math.floor(viewport.width) + "px";
             canvas.style.height =  Math.floor(viewport.height) + "px";
-
+            
             var transform = outputScale !== 1
             ? [outputScale, 0, 0, outputScale, 0, 0]
             : null;
@@ -53,6 +53,7 @@ function renderPage(pdf, pageNum)
             viewport: viewport
             };
             page.render(renderContext);
+            console.log("rendered");
         })
     });
 }
