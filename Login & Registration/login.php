@@ -1,5 +1,6 @@
-<?php include('login.php');?>
 
+<?php include('signin.php');?>
+<?php include('registration.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +17,10 @@
 		<form action="#" method="post">
 			<h1>Create Account</h1>
 			<span>or use your email for registration</span>
-			<input type="text" name="name1" placeholder="Name" />
+			<input type="text" name="name" placeholder="Name" />
 			<input type="email" name="email1"  placeholder="Email" />
 			<input type="password" name="password1" placeholder="Password" />
-			<button>Sign Up</button>
+			 <button type="submit" name="signup">Sign Up</button>
 		</form>
 		
 	</div>
@@ -29,9 +30,9 @@
 			<h1>Sign in</h1>
 			<span>or use your account</span>
 			<input type="email" name="email" placeholder="Email" />
-			<input type="password" namne="password" placeholder="Password" />
+			<input type="password" name="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button type="submit" name="signin">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -51,7 +52,6 @@
 		</div>
 	</div>
 </div>
-
 <script src="login.js"></script>
 </body>
 </html>

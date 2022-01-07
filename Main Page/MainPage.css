@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800%27');
+*
+{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #EEEEEE;
+    min-height: 100vh;
+
+}
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+header.sticky{
+    padding: 5px 100px;
+    background: #548CA8;
+}
+header .Logo{
+    position: relative;
+    font-weight: 700;
+    color: #334257;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color: #334257;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.5s;
+}
+.Banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+header .sticky .Logo,
+header .sticky ul li a{
+    color: #000;
+}
+.Search{
+    position: relative;
+    width: 65px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.Search:hover{
+    width: 450px;
+}
+.Search input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 25px;
+    outline: none;
+    color: #334257;
+    background:linear-gradient(#dbdae1,#a3aaba);
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+    15px 15px 15px rgba(0, 0, 0, 0.1),
+    20px 20px 15px rgba(0, 0, 0, 0.1),
+    30px 30px 15px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 2px #fff; */
+}
+.Search input,
+.Search input::placeholder{
+    color: transparent;
+}
+.Search:hover input,
+.Search:hover input::placeholder{
+    color: #334257;
+}
+ion-icon{
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
