@@ -26,10 +26,9 @@
         document.querySelectorAll('.bookImg').forEach(bookImg => {
           bookImg.hidden = true;
         });
-
+  
         renderBook(bookDir, doit); 
 
-       
       }
       
       function doit(bDir, w, h){
@@ -41,6 +40,7 @@
             display: 'double',
             autoCenter: true,
           });
+
           document.getElementById(bDir).hidden = false; 
           console.log("turn should be done");
         }
