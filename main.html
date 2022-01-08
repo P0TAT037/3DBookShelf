@@ -3,33 +3,48 @@
   <head>
     <title>main</title>
     <link rel="stylesheet" src="css/bookStyle.css" />
+    
   </head>
 
-  <body style="background-color: rgb(16, 96, 128)">
+  <body style="background-color: #9bc4d4">
+    <div id='lib'></div>
     
-    <input type="button" id="titleb1" onclick = "turn('b1')">
-    <div id="b1" hidden class="book"></div>
-
-
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
     <script src="turnjs4/lib/turn.min.js"></script>
+    
+    <script src="js/generateBooks.js"></script>
     <script src="js/renderBook.js"></script>
     
     <script>
-      function turn(bookId) {
-        console.log("started");
-        document.querySelectorAll(".book").forEach(function (book) {
-          if (book.hidden == true) book.hidden = false;
+      function turn(bookDir) {
+       
+        console.log("started turn");
+
+        var bookDiv = document.getElementById(bookDir);
+        document.querySelectorAll('.bookImg').forEach(bookImg => {
+          bookImg.hidden = true;
         });
 
-        $('#'+bookId).turn({
-          width: 540 * 2,
-          height: 566 * 2,
-          autoCenter: true,
-          acceleration: true,
-        });
+        renderBook(bookDir, doit); 
+
+       
       }
+      
+      function doit(bDir, w, h){
+          var div = document.getElementById(bDir);
+  
+          $(div).turn({
+            width: w,
+            height: h,
+            display: 'double',
+            autoCenter: true,
+          });
+          document.getElementById(bDir).hidden = false; 
+          console.log("turn should be done");
+        }
     </script>
+
   </body>
 </html>
