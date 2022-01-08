@@ -23,7 +23,9 @@
 			   $count = mysqli_num_rows($result);  
 		   
 			   if($count==1)
-			   {echo "<h1><center> Login successful </center></h1>";}  
+			   {
+				header("Location: http://localhost/3dbookshelf/Main%20Page/Main_Page.php", true, 301);
+			   }
 			   else
 			   {echo "<h1> Login failed. Invalid email or password.</h1>";}   
 		   }
