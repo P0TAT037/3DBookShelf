@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="MainPage.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+<body>
+
+  <section>
+    <header>
+      <a href="#" class="Logo">3D Book Reader</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="Login.html">Account</a></li>
+        <li><div class="Search">
+          <input type="text" placeholder="What do you want to search about?">
+          <ion-icon name="search-outline"></ion-icon>
+        </div></li>
+      </ul>
+    </header>
+  </section>
+  <section>
+    <div class="Banner">
+     <img src="frontImg.png" alt="">
+    </div> 
+  </section>
+    <script>
+        
+        let img = document.querySelector("img");
+        window.addEventListener("scroll", function()
+        {
+          let i = 1- window.scrollY /500;
+          img.style.opacity=i;           
+        }) 
+        window.addEventListener("scroll", function(){
+          let header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY>0);
+        })
+    </script>
+   <br>
+   <div id="result"></div>
+  </div>
+  <section>
+    <div class="content">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore eos architecto 
+        facere omnis at? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+        doloribus laudantium labore repudiandae? Lorem ipsum dolor sit amet consectetur adipis
+        Obcaecati esse tempora ipsum dicta perspiciatis quasi sunt distinctio, corporis magni possimus 
+        aliquid accusantium, vitae iste quo, alias in. Excepturi, fuga eaque! Lorem ipsum dolor sit 
+        amet, consectetur adipisicing elit. At vel porro consectetur quod. Sequi earum qui odit explicabo 
+        harum, maxime voluptatum minima error quis nisi minus quisquam magni, deleniti praesentium. Lorem 
+        ipsum dolor, sit amet consectetur adipisicing elit. Eaque at, ipsum omnis aut perspiciatis quis 
+        tempora hic cumque esse, inventore labore asperiores atque quos deleniti soluta totam. Nihil, 
+        nostrum asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus sed dicta 
+        beatae assumenda voluptatibus placeat fuga hic adipisci porro dolorem, error vel dolores
+        Minus cum ab quos maiores dicta! Lorem ipsum dolor sit amet conse
+        suscipit a nam consequuntur illo dolorem quia quod volu
+        veritatis facere aut cumque aperiam omnis?
+        </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore eos architecto nihil 
+          voluptate explicabo ea minus voluptates, quae qui in fugit dicta, dignissimos consequuntur 
+          facere omnis at? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur modi esse quo 
+          fugiat ipsum odit natus autem, eum nihil atque, obcaecati asperiores. Temporibus quod corrupti,
+          doloribus laudantium labore repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Obcaecati esse tempora ipsum dicta perspiciatis quasi sunt distinctio, corporis magni possimus 
+          aliquid accusantium, vitae iste quo, alias in. Excepturi, fuga eaque! Lorem ipsum dolor sit 
+          amet, consectetur adipisicing elit. At vel porro consectetur quod. Sequi earum qui odit explicabo 
+          harum, maxime voluptatum minima error quis nisi minus quisquam magni, deleniti praesentium. Lorem 
+          ipsum dolor, sit amet consectetur adipisicing elit. Eaque at, ipsum omnis aut perspiciatis quis 
+          tempora hic cumque esse, inventore labore asperiores atque quos deleniti soluta totam. Nihil, 
+          nostrum asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus sed dicta 
+          beatae assumenda voluptatibus placeat fuga hic adipisci porro dolorem, error vel dolor
+          Minus cum ab quos maiores dicta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iure
+          suscipit a nam consequuntur illo dolorem quia quod voluptatem animi earum repellat doloremque, rem
+          veritatis facere aut cumque aperiam omnis?
+        </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore eos architecto nihil  nostrum 
+          voluptate explicabo ea minus voluptates, quae qui in fugit dicta, dignissimos consequuntur 
+          facere omnis at? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur esse quo 
+          fugiat ipsum odit natus autem, eum nihil atque, obcaecati asperiores. Temporibus quod dolores,
+          doloribus laudantium labore repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Obcaecati esse tempora ipsum dicta perspiciatis quasi sunt distinctio, corporis magni possimus 
+          aliquid accusantium, vitae iste quo, alias in. Excepturi, fuga eaque! Lorem ipsum dolor sit 
+          amet, consectetur adipisicing elit. At vel porro consectetur quod. Sequi earum qui odit explicabo 
+          harum, maxime voluptatum minima error quis nisi minus quisquam magni, deleniti praesentium. Lorem 
+          ipsum dolor, sit amet consectetur adipisicing elit. Eaque at, ipsum omnis aut perspiciatis quis 
+          tempora hic cumque esse, inventore labore asperiores atque quos deleniti soluta totam. Nihil, 
+          nostrum asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus sed dicta 
+          beatae assumenda voluptatibus placeat fuga hic adipisci porro dolorem, error vel consequuntur?
+          Minus cum ab quos maiores dicta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iure
+          suscipit a nam consequuntur illo dolorem quia quod voluptatem animi earum repellat doloremque, rem
+          veritatis facere aut cumque aperiam omnis?
+        </p>
+    </div>
+    </section>
+  <footer class="footer">
+    <div class="cont">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"search.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>
