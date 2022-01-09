@@ -2,59 +2,60 @@ pdfjsLib.GlobalWorkerOptions.workerSrc ="https://cdn.jsdelivr.net/npm/pdfjs-dist
 
 var bookDivHtml = "";
 
-// var w = div.children[0].children[0].clientWidth*2;
-// var h = div.children[0].children[0].clientHeight;
-
-// document.querySelectorAll('.book').forEach(function() {
-//     renderBook(pdfDir);   
-// }); 
-
-
-
-function renderBook(pdfDir, callback){
+function renderBook(pdfDir){
     
-    var bookDiv = document.getElementById(pdfDir);
-    
+    var bookDiv = document.getElementById(pdfDir);  
     pdfjsLib.getDocument(pdfDir).promise.then(function (doc) {
         
-        var p = new Promise(function(){
-            pc = doc.numPages;
-            for(let i = 1; i <= pc; i++){
-                bookDivHtml+="<div class = 'page'><canvas id='" + i + "p'></canvas></div>\n";
-            }
+        
+        pc = doc.numPages;
+        for(let i = 1; i <= pc; i++){
+            bookDivHtml+="<div class = 'page'><canvas id='" + i + "p'></canvas></div>\n";
+        }
 
-            bookDiv.innerHTML=bookDivHtml;
-            console.log('done');
-            console.log(bookDivHtml);
-            
-            for(let j = 1; j <= pc; j++){
-               
-                renderPage(doc, j);
-            };
+        bookDiv.innerHTML += bookDivHtml;
+        console.log('done');
+        console.log(bookDivHtml);
+
+        for(let j = 1; j <= pc; j++){
+            renderPage(doc, j);
+        }
                 
-        });
-        
-        
         doc.getPage(1).then(function(page){
             var v = page.getViewport({ scale: 1, });
             
             var w = v.width*2;
-            var h = v.height;
-           
-            p.then(callback(pdfDir, w, h));
+
+            getWidth = function(){return w;};
+        
+        });
+
+        doc.getPage(1).then(function(page){
+            var v = page.getViewport({ scale: 1, });
             
-        })
-     
+            var h = v.height;
+        
+            getHeight = function(){return h};
+        
+        });
+        
+
+
     }); 
+
 }
 
+var getWidth;
+
+var getHeight;
+
 function renderPage(pdf, pageNum)
-{            
+{         
 
     pdf.getPage(pageNum).then(function(page){
+        
         var scale = 1;
         var viewport = page.getViewport({ scale: scale, });
-        // Support HiDPI-screens.
         var outputScale = window.devicePixelRatio || 1;
         
         var canvas = document.getElementById(pageNum+'p');
