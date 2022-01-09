@@ -24,7 +24,7 @@
         document.querySelectorAll('.bookImg').forEach(bookImg => {
           bookImg.hidden = true;
         });
-        var optionsHtml = '<input type="button" value=Download onclick="">\n<input type="button" value="Read" onclick='+"turn('"+bdr+"')>" 
+        var optionsHtml = '<input type="button" class="option" value=Download onclick="">\n<input type="button" class="option" value="Read" onclick='+"turn('"+bdr+"')>" 
         document.getElementById('options').innerHTML = optionsHtml
         console.log(optionsHtml);
         renderBook(bdr);  
@@ -47,7 +47,10 @@
 
           document.getElementById(bookDir).hidden = false; 
           console.log("turn should be done");
-
+          
+          document.querySelectorAll('.option').forEach(option => {
+            option.hidden = true;
+        });
       }
 
     </script>
